@@ -1,8 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="lib.gmsframeworkx">
+    package="lib.alframeworkx">
     <application>
         <provider
-            android:name=".easyphotopicker.ExtendedFileProvider"
+            android:name="lib.alframeworkx.easyphotopicker.ExtendedFileProvider"
             android:authorities="${applicationId}.fileprovider"
             android:networkSecurityConfig="@xml/network_security_config"
             android:exported="false"
