@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lay_photo"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/grey_100"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:layout_gravity="center_horizontal"
+        android:tint="@color/grey_300"
+        android:id="@+id/img_bottomsheet_controller"
+        android:src="@drawable/ic_drag_handle_black_24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_marginBottom="@dimen/dimen_5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:orientation="horizontal">
+        <LinearLayout
+            android:padding="@dimen/dimen_10dp"
+            android:layout_width="@dimen/dimen_10dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                style="@style/StandardTextOneRow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pick from Camera" />
+            <androidx.cardview.widget.CardView
+                android:layout_margin="@dimen/dimen_2dp"
+                android:id="@+id/card_camera"
+                style="@style/clickable"
+                app:cardElevation="3dp"
+                app:cardCornerRadius="35dp"
+                app:contentPadding="@dimen/dimen_10dp"
+                app:cardBackgroundColor="@color/blue_200"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/img_camera"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/camera"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:padding="@dimen/dimen_10dp"
+            android:layout_width="@dimen/dimen_10dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                style="@style/StandardTextOneRow"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pick from Gallery" />
+            <androidx.cardview.widget.CardView
+                android:layout_margin="@dimen/dimen_2dp"
+                android:id="@+id/card_gallery"
+                style="@style/clickable"
+                app:cardElevation="3dp"
+                app:cardCornerRadius="35dp"
+                app:contentPadding="@dimen/dimen_10dp"
+                app:cardBackgroundColor="@color/orange_300"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/img_gallery"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/gallery"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

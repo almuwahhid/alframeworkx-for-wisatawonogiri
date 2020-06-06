@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="@dimen/dimen_14dp">
+
+        <ImageView
+            android:id="@+id/alert_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_dialog_alert"/>
+        <TextView
+            style="@style/TitleTextOneRow"
+            android:id="@+id/alert_title"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:layout_width="wrap_content"
+            android:textStyle="bold"
+            android:text="GPS Not Active"
+            android:textAlignment="center"
+            android:textSize="@dimen/dimen_18dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            style="@style/StandardText"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:id="@+id/alert_content"
+            android:layout_width="wrap_content"
+            android:textAlignment="center"
+            android:text="An Error has been occured while creating something "
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/alert_lay_button"
+        android:layout_margin="@dimen/dimen_10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardBackgroundColor="@color/primary"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="2dp"
+        app:cardUseCompatPadding="true">
+        <LinearLayout
+            android:id="@+id/loginGoogle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dimen_10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                android:id="@+id/alert_content_button"
+                style="@style/StandardText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textStyle="bold"
+                android:text="SUBMIT"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+    <!--<LinearLayout
+        android:id="@+id/alert_lay_button"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/red_500"
+        android:gravity="center_horizontal"
+        android:padding="@dimen/dimen_14dp">
+        <TextView
+            android:id="@+id/alert_content_button"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:text="Submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>-->
+</LinearLayout>

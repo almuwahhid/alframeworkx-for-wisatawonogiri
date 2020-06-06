@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--AvatarView-->
+    <dimen name="av_default_border_width">2dp</dimen>
+    <dimen name="av_default_height">75dp</dimen>
+    <dimen name="av_default_width">75dp</dimen>
+    <!--end of AvatarView-->
+
+    <dimen name="dimen_1dp">1dp</dimen>
+    <dimen name="dimen_2dp">2dp</dimen>
+    <dimen name="dimen_3dp">3dp</dimen>
+    <dimen name="dimen_4dp">4dp</dimen>
+    <dimen name="dimen_5dp">5dp</dimen>
+    <dimen name="dimen_8dp">8dp</dimen>
+    <dimen name="dimen_10dp">10dp</dimen>
+    <dimen name="dimen_12dp">12dp</dimen>
+    <dimen name="dimen_14dp">14dp</dimen>
+    <dimen name="dimen_16dp">16dp</dimen>
+    <dimen name="dimen_18dp">18dp</dimen>
+    <dimen name="dimen_20dp">20dp</dimen>
+    <dimen name="dimen_24dp">24dp</dimen>
+    <dimen name="dimen_22dp">22dp</dimen>
+    <dimen name="dimen_32dp">32dp</dimen>
+    <dimen name="dimen_40dp">40dp</dimen>
+    <dimen name="dimen_48dp">48dp</dimen>
+    <dimen name="dimen_50dp">50dp</dimen>
+    <dimen name="dimen_52dp">52dp</dimen>
+    <dimen name="dimen_54dp">54dp</dimen>
+    <dimen name="dimen_56dp">56dp</dimen>
+    <dimen name="dimen_64dp">64dp</dimen>
+    <dimen name="dimen_72dp">72dp</dimen>
+    <dimen name="dimen_76dp">76dp</dimen>
+    <dimen name="dimen_80dp">80dp</dimen>
+    <dimen name="dimen_96dp">96dp</dimen>
+    <dimen name="dimen_108dp">108dp</dimen>
+    <dimen name="dimen_128dp">128dp</dimen>
+    <dimen name="dimen_140dp">140dp</dimen>
+    <dimen name="dimen_160dp">160dp</dimen>
+    <dimen name="dimen_180dp">180dp</dimen>
+    <dimen name="dimen_192dp">192dp</dimen>
+    <dimen name="dimen_224dp">224dp</dimen>
+    <dimen name="dimen_256dp">256dp</dimen>
+    <dimen name="dimen_280dp">280dp</dimen>
+    <dimen name="dimen_300dp">300dp</dimen>
+    <dimen name="dimen_420dp">420dp</dimen>
+
+    <dimen name="text_title">18sp</dimen>
+    <dimen name="text_default">12sp</dimen>
+    <dimen name="text_small">10sp</dimen>
+
+    <dimen name="txt_small">10sp</dimen>
+    <dimen name="txt_medium">14sp</dimen>
+    <dimen name="txt_large">18sp</dimen>
+
+    <dimen name="margin_small">5dp</dimen>
+    <dimen name="margin_standard">10dp</dimen>
+    <dimen name="margin_medium">15dp</dimen>
+    <dimen name="margin_big">25dp</dimen>
+    <dimen name="margin_bigger">30dp</dimen>
+
+    <dimen name="bar_height">56dp</dimen>
+    <dimen name="item_height">46dp</dimen>
+</resources>
