@@ -58,6 +58,9 @@ dependencies {
     api 'com.wdullaer:materialdatetimepicker:3.5.1'
 //    api 'com.ss.bannerslider:bannerslider:2.0.0'
     api 'com.github.jkwiecien:EasyImage:2.0.2'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.11.2'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.11.2'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.11.2'
 
 
 //    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"

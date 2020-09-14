@@ -17,6 +17,9 @@ import com.android.volley.toolbox.HurlStack;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -32,6 +35,8 @@ import lib.alframeworkx.SuperUser.RequestHandler;
 
 public class AlRequest {
 
+    private static final ObjectMapper mapper = new ObjectMapper();
+
     public interface OnPostRequest{
         void onPreExecuted();
 
@@ -39,9 +44,11 @@ public class AlRequest {
 
         void onFailure(String error);
 
-        Map<String, String> requestParam();
+//        Map<String, String> requestParam();
+        Object requestParam();
 
-        Map<String, String> requestHeaders();
+//        Map<String, String> requestHeaders();
+        Object requestHeaders();
     }
 
     public interface OnPostRawRequest{
@@ -75,9 +82,11 @@ public class AlRequest {
 
         void onFailure(String error);
 
-        Map<String, String> requestParam();
+//        Map<String, String> requestParam();
+        Object requestParam();
 
-        Map<String, String> requestHeaders();
+//        Map<String, String> requestHeaders();
+        Object requestHeaders();
     }
     public interface OnMultipartRequest{
         Map<String, VolleyMultipartRequest.DataPart> requestData();
@@ -88,9 +97,11 @@ public class AlRequest {
 
         void onFailure(String error);
 
-        Map<String, String> requestHeaders();
+//        Map<String, String> requestHeaders();
+        Object requestHeaders();
 
-        Map<String, String> requestParam();
+//        Map<String, String> requestParam();
+        Object requestParam();
 
     }
 
@@ -150,7 +161,7 @@ public class AlRequest {
 
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
-                return onGetRequest.requestHeaders();
+                return toMap(onGetRequest.requestHeaders());
             }
 
         };
@@ -192,14 +203,14 @@ public class AlRequest {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> param;
-                param = onPostRequest.requestParam();
+                param = toMap(onPostRequest.requestParam());
                 Log.d("gmsParams "+URL, "requestParam: "+param);
                 return param;
             }
 
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
-                return onPostRequest.requestHeaders();
+                return toMap(onPostRequest.requestHeaders());
             }
         };
         RequestHandler.getInstance().addToRequestQueue(request, AlStatic.DateInMilis()+URL);
@@ -246,14 +257,14 @@ public class AlRequest {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> param;
-                param = onPostRequest.requestParam();
+                param = toMap(onPostRequest.requestParam());
                 Log.d("gmsParams "+URL, "requestParam: "+param);
                 return param;
             }
 
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
-                return onPostRequest.requestHeaders();
+                return toMap(onPostRequest.requestHeaders());
             }
         };
         RequestHandler.getInstance().addToRequestQueue(request, AlStatic.DateInMilis()+URL);
@@ -346,12 +357,12 @@ public class AlRequest {
         }) {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
-                return onPostRequest.requestHeaders();
+                return toMap(onPostRequest.requestHeaders());
             }
 
             @Override
             protected Map<String, String> getParams() {
-                return onPostRequest.requestParam();
+                return toMap(onPostRequest.requestParam());
             }
 
             @Override
@@ -363,5 +374,25 @@ public class AlRequest {
         multipartRequest.setShouldCache(false);
         RequestHandler.getInstance().addToRequestQueue(multipartRequest, AlStatic.DateInMilis()+URL);
         onPostRequest.onPreExecuted();
+    }
+
+
+    public static Map<String, String> toMap(Object obj) {
+        // Convert the object to an intermediate form (map of strings to JSON nodes)
+        Map<String, JsonNode> intermediateMap = mapper.convertValue(obj, new TypeReference<Map<String, JsonNode>>() {});
+
+        // Convert the json nodes to strings
+        Map<String, String> finalMap = new HashMap<>(intermediateMap.size() + 1); // Start out big enough to prevent resizing
+        for (Map.Entry<String, JsonNode> e : intermediateMap.entrySet()) {
+            String key = e.getKey();
+            JsonNode val = e.getValue();
+
+            // Get the text value of textual nodes, and convert non-textual nodes to JSON strings
+            String stringVal = val.isTextual() ? val.textValue() : val.toString();
+
+            finalMap.put(key, stringVal);
+        }
+
+        return finalMap;
     }
 }
